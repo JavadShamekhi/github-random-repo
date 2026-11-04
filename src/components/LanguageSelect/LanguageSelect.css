@@ -1,0 +1,26 @@
+.language-select {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.language-select label {
+	color: #a1a1aa;
+	font-size: 14px;
+}
+
+.language-select select {
+	width: 100%;
+	padding: 14px 16px;
+	border: 1px solid #27272a;
+	border-radius: 10px;
+	background: #18181b;
+	color: #fafafa;
+	font-size: 15px;
+	outline: none;
+	cursor: pointer;
+}
+
+.language-select select:focus {
+	border-color: #8b5cf6;
+}
