@@ -1,75 +1,109 @@
-# React + TypeScript + Vite
+# GitHub Random Repository Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application that helps developers discover random GitHub repositories based on their preferred programming language.
 
-Currently, two official plugins are available:
+Explore open-source projects, discover interesting repositories, and find inspiration for your next project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Select a programming language from the dropdown.
+- Discover random GitHub repositories.
+- Refresh to find another repository.
+- View repository details:
+    - Repository name and owner
+    - Description
+    - Programming language
+    - Stars
+    - Forks
+    - Open issues
+- Cache API responses to reduce unnecessary requests.
+- Avoid showing previously selected repositories until the available results are exhausted.
+- Loading, error, and empty states.
+- Responsive user interface.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Vite
+- CSS
+- GitHub REST API
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js
+- npm
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
 
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/github-random-repo.git
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Navigate to the project directory:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cd github-random-repo
 ```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL provided by Vite in your browser.
+
+## API
+
+This project uses the GitHub REST API to search for repositories by programming language.
+
+[GitHub Search Repositories API](https://docs.github.com/en/rest/search/search#search-repositories)
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── LanguageSelect/
+│   ├── RepositoryCard/
+│   └── Loading/
+├── services/
+│   └── github.ts
+├── types/
+│   └── repository.ts
+├── App.tsx
+├── App.css
+├── index.css
+└── main.tsx
+```
+
+## Learning Objectives
+
+This project was built to practice:
+
+- Working with REST APIs using Fetch
+- React Hooks and State Management
+- TypeScript interfaces and type safety
+- Async/Await and error handling
+- Component-based architecture
+- Caching API responses
+- Responsive UI development
+
+## Roadmap Project
+
+This project is part of the [roadmap.sh GitHub Random Repository Finder Challenge](https://roadmap.sh/projects/github-random-repo).
+
+## License
+
+This project is open-source and available under the MIT License.
